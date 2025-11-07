@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overscroll-behavior: none;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+                    0 0 40px rgba(255, 255, 255, 0.2),
+                    0 0 60px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.4),
+                    0 0 60px rgba(255, 255, 255, 0.3),
+                    0 0 90px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(-45deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #f093fb 50%,
+        #4facfe 75%,
+        #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.gradient-bg::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 30s ease-in-out infinite;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.tool-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent);
+    transition: left 0.5s;
+}
+
+.tool-card:hover::before {
+    left: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.time-display {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.digit {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 20px rgba(255, 200, 255, 0.4),
+                 0 0 40px rgba(180, 150, 255, 0.3),
+                 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrapper {
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes title-glow {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 200, 255, 0.5),
+                     0 0 30px rgba(200, 150, 255, 0.3),
+                     0 0 45px rgba(150, 100, 255, 0.2),
+                     0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(255, 220, 255, 0.7),
+                     0 0 50px rgba(220, 180, 255, 0.5),
+                     0 0 75px rgba(180, 130, 255, 0.3),
+                     0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+h1 {
+    animation: title-glow 2s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.98);
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: float 15s ease-in-out infinite;
+    pointer-events: none;
+}
