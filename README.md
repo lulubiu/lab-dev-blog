@@ -99,10 +99,10 @@ php -S localhost:8000
 
 <div align="center">
   <img src="https://github.com/lulubiu/dev-blog/blob/main/public/wechat.jpg?raw=true" alt="微信赞赏码" width="200"/>
-  <p><sub>扫码赞赏 | 感谢支持 🙏</sub></p>
+  <p><sub>扫码赞赏 | 感谢老板 🍭</sub></p>
 </div>
 
-> 💡 小贴士：赞赏时可以留言告诉我你最喜欢哪个工具，或者想要什么新功能，我会优先考虑的！
+> 💡 小提示：赞赏时可以留言告诉我你最喜欢哪个工具，我是一个需要正反馈的小怪物 🤪
 
 ## 许可
 
