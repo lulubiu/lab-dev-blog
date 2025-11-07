@@ -78,3 +78,54 @@ function createParticles() {
 
 // 页面加载时创建粒子
 window.addEventListener('load', createParticles);
+
+// 动态加载工具列表
+async function loadTools() {
+    try {
+        const response = await fetch('tools.json');
+        const tools = await response.json();
+
+        const toolsGrid = document.querySelector('.grid.grid-cols-1');
+
+        // 清空现有的工具卡片模板
+        toolsGrid.innerHTML = '';
+
+        // 为每个工具创建卡片
+        tools.forEach(tool => {
+            const toolCard = createToolCard(tool);
+            toolsGrid.appendChild(toolCard);
+        });
+    } catch (error) {
+        console.error('加载工具列表失败:', error);
+    }
+}
+
+// 创建工具卡片
+function createToolCard(tool) {
+    const card = document.createElement('div');
+    card.className = 'tool-card glass-effect rounded-2xl p-6 cursor-pointer';
+    card.onclick = () => window.open(tool.url, '_blank');
+
+    // 从URL提取域名用于获取favicon
+    const domain = new URL(tool.url).hostname;
+    const faviconUrl = `https://favicon.im/${domain}?larger=true`;
+
+    card.innerHTML = `
+        <div class="icon-wrapper flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4 overflow-hidden">
+            <img src="${faviconUrl}"
+                 alt="${tool.title} 图标"
+                 class="w-10 h-10"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="w-8 h-8 text-white" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-2">${tool.title}</h3>
+        <p class="text-white/80 text-sm">${tool.description}</p>
+    `;
+
+    return card;
+}
+
+// 页面加载时加载工具列表
+window.addEventListener('load', loadTools);
