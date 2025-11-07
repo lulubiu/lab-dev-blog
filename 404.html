@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO 基础标签 -->
+    <title>404 - 页面未找到 | 我的 Lab</title>
+    <meta name="description" content="抱歉，您访问的页面不存在。返回首页继续探索有趣的小工具。">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- 网站图标 -->
+    <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="public/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="public/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes rotate-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-number {
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            animation: title-glow 2s ease-in-out infinite;
+        }
+
+        .floating-icon {
+            animation: bounce-slow 3s ease-in-out infinite;
+        }
+
+        .spinning-gear {
+            animation: rotate-slow 20s linear infinite;
+        }
+
+        .home-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .home-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+                        0 0 30px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <div class="container mx-auto px-4 min-h-screen flex items-center justify-center">
+        <div class="max-w-4xl w-full">
+            <!-- 404 错误卡片 -->
+            <div class="glass-effect rounded-3xl p-8 md:p-16 text-center">
+                <!-- 404 数字 -->
+                <div class="mb-8">
+                    <h1 class="error-number text-9xl md:text-[200px] lg:text-[250px] leading-none mb-4">
+                        404
+                    </h1>
+                </div>
+
+                <!-- 图标 -->
+                <div class="floating-icon inline-block mb-8">
+                    <div class="icon-wrapper flex items-center justify-center w-24 h-24 bg-white/20 rounded-full mb-4 mx-auto">
+                        <svg class="spinning-gear w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- 错误信息 -->
+                <div class="mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        哎呀，页面走丢了
+                    </h2>
+                    <p class="text-xl md:text-2xl text-white/90 mb-4">
+                        您访问的页面似乎在实验室的某个角落里迷路了
+                    </p>
+                    <p class="text-lg text-white/70">
+                        别担心，让我们一起回到熟悉的地方吧
+                    </p>
+                </div>
+
+                <!-- 返回按钮 -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/" class="home-button glass-effect px-8 py-4 rounded-xl text-white text-lg font-semibold inline-flex items-center space-x-2 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span>返回首页</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
