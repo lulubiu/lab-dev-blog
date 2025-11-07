@@ -78,18 +78,77 @@
         </div>
 
         <!-- 工具卡片网格 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- 工具卡片模板 -->
-            <div class="tool-card glass-effect rounded-2xl p-6 cursor-pointer">
-                <div class="icon-wrapper flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
+        <div class="max-w-6xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+                工具列表
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 工具卡片模板 -->
+                <div class="tool-card glass-effect rounded-2xl p-6 cursor-pointer">
+                    <div class="icon-wrapper flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">计算器</h3>
+                    <p class="text-white/80 text-sm">简单实用的在线计算工具</p>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">计算器</h3>
-                <p class="text-white/80 text-sm">简单实用的在线计算工具</p>
             </div>
+        </div>
 
+        <!-- 关于这个网站 -->
+        <div class="max-w-4xl mx-auto mb-16">
+            <div class="glass-effect rounded-3xl p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                    这是什么地方？
+                </h2>
+                <div class="space-y-4 text-white/90 text-lg leading-relaxed">
+                    <p>
+                        这里是我的个人实验室，用来放一些脑海里冒出来的奇怪想法。
+                    </p>
+                    <p>
+                        可能是某天洗澡时想到的一句金句生成器，可能是体检前想要的一个体检清单工具，也可能是...这些东西不一定实用，但做的时候很开心，做完了也很有成就感
+                    </p>
+                    <p>
+                        我觉得，有些东西不需要太严肃，不需要讲什么商业价值或用户需求。<span class="text-white font-semibold">只要自己觉得好玩，那就值得做。</span>
+                    </p>
+                    <p class="text-white/70 text-base italic mt-6">
+                        “人生已经够无聊了，为什么不给自己找点乐子呢？”
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 赞赏支持 -->
+        <div class="max-w-3xl mx-auto mb-16">
+            <div class="glass-effect rounded-3xl p-8 md:p-12">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        喜欢这些小工具吗？
+                    </h2>
+                    <p class="text-white/90 text-lg mb-6 leading-relaxed">
+                        做这些东西纯粹是因为好玩，但说实话，也确实花了不少时间和精力。<br>
+                        如果你觉得这些小玩意儿还挺有意思的，可以请我喝杯咖啡~
+                    </p>
+                    <p class="text-white/80 text-base mb-8">
+                        您的支持会让我更有动力继续折腾这些“没什么大用”的东西
+                    </p>
+
+                    <!-- 赞赏码 -->
+                    <div class="inline-block bg-white rounded-2xl p-6 shadow-2xl">
+                        <img src="https://github.com/lulubiu/dev-blog/blob/main/public/wechat.jpg?raw=true"
+                             alt="微信赞赏码"
+                             class="w-48 h-48 md:w-56 md:h-56 rounded-xl">
+                        <p class="text-gray-600 text-sm mt-4">扫码赞赏 | 感谢老板</p>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-white/10 rounded-xl">
+                        <p class="text-white/90 text-sm">
+                            💡 小提示：赞赏时可以留言告诉我你最喜欢哪个工具，我是一个需要正反馈的小怪物 🤪
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- 页脚 -->
