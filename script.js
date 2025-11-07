@@ -129,3 +129,36 @@ function createToolCard(tool) {
 
 // 页面加载时加载工具列表
 window.addEventListener('load', loadTools);
+
+// 赞赏弹窗交互
+const donateBtn = document.getElementById('donateBtn');
+const donateModal = document.getElementById('donateModal');
+const closeModal = document.getElementById('closeModal');
+
+// 打开弹窗
+donateBtn.addEventListener('click', () => {
+    donateModal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // 防止背景滚动
+});
+
+// 关闭弹窗
+closeModal.addEventListener('click', () => {
+    donateModal.classList.remove('show');
+    document.body.style.overflow = ''; // 恢复滚动
+});
+
+// 点击弹窗背景关闭
+donateModal.addEventListener('click', (e) => {
+    if (e.target === donateModal) {
+        donateModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+});
+
+// ESC键关闭弹窗
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && donateModal.classList.contains('show')) {
+        donateModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+});

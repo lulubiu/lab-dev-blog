@@ -114,43 +114,49 @@
             </div>
         </div>
 
-        <!-- 赞赏支持 -->
-        <div class="max-w-3xl mx-auto mb-16">
-            <div class="glass-effect rounded-3xl p-8 md:p-12">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                        喜欢这些小工具吗？
-                    </h2>
-                    <p class="text-white/90 text-lg mb-6 leading-relaxed">
-                        做这些东西纯粹是因为好玩，但说实话，也确实花了不少时间和精力。<br>
-                        如果你觉得这些小玩意儿还挺有意思的，可以请我喝杯咖啡~
-                    </p>
-                    <p class="text-white/80 text-base mb-8">
-                        您的支持会让我更有动力继续折腾这些“没什么大用”的东西
-                    </p>
-
-                    <!-- 赞赏码 -->
-                    <div class="inline-block bg-white rounded-2xl p-6 shadow-2xl">
-                        <img src="https://github.com/lulubiu/dev-blog/blob/main/public/wechat.jpg?raw=true"
-                             alt="微信赞赏码"
-                             class="w-48 h-48 md:w-56 md:h-56 rounded-xl">
-                        <p class="text-gray-600 text-sm mt-4">扫码赞赏 | 感谢老板 🍭</p>
-                    </div>
-
-                    <div class="mt-8 p-4 bg-white/10 rounded-xl">
-                        <p class="text-white/90 text-sm">
-                            💡 小提示：赞赏时可以留言告诉我你最喜欢哪个工具，我是一个需要正反馈的小怪物 🤪
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- 页脚 -->
         <div class="text-center mt-12 mb-8">
             <p class="text-white/80 text-sm">
                 © 2025 我的 Lab
             </p>
+        </div>
+    </div>
+
+    <!-- 浮动赞赏按钮 -->
+    <button id="donateBtn" class="donate-float-btn" aria-label="请我喝咖啡">
+        ☕
+    </button>
+
+    <!-- 赞赏弹窗 -->
+    <div id="donateModal" class="donate-modal">
+        <div class="donate-modal-content">
+            <button class="donate-modal-close" id="closeModal" aria-label="关闭">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                喜欢这些小工具吗？
+            </h2>
+            <p class="text-white/90 text-lg mb-6 leading-relaxed">
+                做这些东西纯粹是因为好玩<br>
+                但说实话，也确实花了不少时间和精力<br>
+                如果你觉得还挺有意思的，可以请我喝杯咖啡~
+            </p>
+            <p class="text-white/80 text-base mb-8">
+                您的支持会让我更有动力继续折腾这些“没什么大用”的东西
+            </p>
+
+            <!-- 赞赏码 -->
+            <div class="inline-block bg-white rounded-2xl p-6 shadow-2xl">
+                <img src="https://github.com/lulubiu/dev-blog/blob/main/public/wechat.jpg?raw=true"
+                     alt="微信赞赏码"
+                     class="w-48 h-48 md:w-56 md:h-56 rounded-xl">
+                <p class="text-gray-600 text-sm mt-4">扫码赞赏 | 感谢老板 🍭</p>
+            </div>
+
+            <div class="mt-8 p-4 bg-white/10 rounded-xl">
+                <p class="text-white/90 text-sm">
+                    💡 小提示：赞赏时可以留言告诉我你最喜欢哪个工具，我是一个需要正反馈的小怪物 🤪
+                </p>
+            </div>
         </div>
     </div>
 
