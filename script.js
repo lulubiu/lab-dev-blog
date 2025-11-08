@@ -111,17 +111,23 @@ function createToolCard(tool) {
     const faviconUrl = `https://favicon.im/${domain}?larger=true`;
 
     card.innerHTML = `
-        <div class="icon-wrapper flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl mb-4 overflow-hidden">
-            <img src="${faviconUrl}"
-                 alt="${tool.title} 图标"
-                 class="w-10 h-10"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <svg class="w-8 h-8 text-white" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+        <div class="flex items-start gap-4">
+            <!-- 左侧：Logo -->
+            <div class="icon-wrapper flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white/20 rounded-xl overflow-hidden">
+                <img src="${faviconUrl}"
+                     alt="${tool.title} 图标"
+                     class="w-10 h-10"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg class="w-8 h-8 text-white" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+            </div>
+            <!-- 右侧：文字信息 -->
+            <div class="flex-1 min-w-0">
+                <h3 class="text-xl font-semibold text-white mb-2">${tool.title}</h3>
+                <p class="text-white/80 text-sm leading-relaxed">${tool.description}</p>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">${tool.title}</h3>
-        <p class="text-white/80 text-sm">${tool.description}</p>
     `;
 
     return card;
