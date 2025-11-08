@@ -6,7 +6,7 @@
 
 ## 在线访问
 
-🔗 [https://lab.lulubiu.com](https://lab.lulubiu.com)
+🔗 [https://lululab.top](https://lululab.top)
 
 ## 项目简介
 

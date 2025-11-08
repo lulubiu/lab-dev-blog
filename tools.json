@@ -1,7 +1,12 @@
 [
   {
+    "title": "个人博客",
+    "description": "想要更多的了解关于我的信息，可以访问我的个人博客",
+    "url": "https://lulubiu.com"
+  },
+  {
     "title": "体检清单参考",
     "description": "根据你的年龄、性别和生活方式,生成一份去医院或体检中心前可以和医生讨论的体检清单。",
-    "url": "https://tijianqingdan.lulubiu.com"
+    "url": "https://tijianqingdan.lululab.top"
   }
 ]
